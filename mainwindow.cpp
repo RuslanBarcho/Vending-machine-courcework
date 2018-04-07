@@ -14,7 +14,7 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::showUserMoney(){
-    //ui->label_user_money->setText(QString::number(banknotesReceiver.userSumm));
+    ui->label_user_money->setText(QString::number(banknotesReceiver.userSumm));
 }
 
 void MainWindow::on_add_50_rubles_clicked()
