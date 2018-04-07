@@ -5,7 +5,6 @@
 class Coffee
 {
 public:
-    Coffee();
     int value;
     QString name;
 };

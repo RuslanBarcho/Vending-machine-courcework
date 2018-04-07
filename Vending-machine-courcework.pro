@@ -28,8 +28,7 @@ SOURCES += \
         mainwindow.cpp \
     vending.cpp \
     banknotesreceiver.cpp \
-    coffeemachine.cpp \
-    coffee.cpp
+    coffeemachine.cpp
 
 HEADERS += \
         mainwindow.h \

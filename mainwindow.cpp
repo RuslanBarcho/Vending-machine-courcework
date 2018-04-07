@@ -12,22 +12,40 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
+//void to display inserted money
 void MainWindow::showUserMoney(){
-    ui->label_user_money->setText(QString::number(banknotesReceiver.userSumm));
+    ui->label_user_money->setText(QString::number(banknotesReceiver.userSumm) + "р");
 }
-
-void MainWindow::on_pushButton_2_clicked()
-{
-    if (coffeeMachine.makeCoffee(1, banknotesReceiver) == 0){
-        ui->label_service->setText("Ваш Латте готов");
+//confirmation of coffee order by clicking button
+void MainWindow::coffeeConfirm(int coffeeID){
+    if (coffeeMachine.makeCoffee(coffeeID, banknotesReceiver) == 0){
+        ui->label_service->setText("Ваш " + coffeeMachine.coffeeList[coffeeID].name + " готов");
+        showUserMoney();
     } else {
         ui->label_service->setText("Недостаточно средств");
     }
-    showUserMoney();
 }
-
-
+//coffee order buttons
+void MainWindow::on_pushButton_clicked()
+{
+    coffeeConfirm(0);
+}
+void MainWindow::on_pushButton_2_clicked()
+{
+    coffeeConfirm(1);
+}
+void MainWindow::on_pushButton_3_clicked()
+{
+    coffeeConfirm(2);
+}
+void MainWindow::on_pushButton_4_clicked()
+{
+    coffeeConfirm(3);
+}
+void MainWindow::on_pushButton_5_clicked()
+{
+    coffeeConfirm(4);
+}
 // cash control, in real this will be non-interface feature
 void MainWindow::on_add_50_rubles_clicked()
 {
@@ -52,4 +70,3 @@ void MainWindow::on_add_500_rubles_clicked()
     banknotesReceiver.addMoney(500);
     showUserMoney();
 }
-
