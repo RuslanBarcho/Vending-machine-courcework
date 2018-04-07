@@ -26,11 +26,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    vending.cpp
+    vending.cpp \
+    banknotesreceiver.cpp \
+    coffeemachine.cpp
 
 HEADERS += \
         mainwindow.h \
-    vending.h
+    vending.h \
+    banknotesreceiver.h \
+    coffeemachine.h
 
 FORMS += \
         mainwindow.ui

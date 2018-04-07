@@ -7,6 +7,9 @@ class Vending
 {
 public:
     Vending();
+    //BanknotesReceiver banknotesreciever;
+    int banknotesAmount[4];
+    int coinsAmount[4];
 private:
     QMutex mutex;
 };
