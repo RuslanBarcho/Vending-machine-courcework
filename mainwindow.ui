@@ -311,7 +311,7 @@
      <string>50Р</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="add_100_rubles">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -329,7 +329,7 @@
      <string>100р</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_8">
+   <widget class="QPushButton" name="add_200_rubles">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -347,7 +347,7 @@
      <string>200р</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_9">
+   <widget class="QPushButton" name="add_500_rubles">
     <property name="geometry">
      <rect>
       <x>10</x>

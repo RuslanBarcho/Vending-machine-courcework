@@ -20,6 +20,14 @@ public:
 private slots:
     void on_add_50_rubles_clicked();
 
+    void on_add_100_rubles_clicked();
+
+    void on_add_200_rubles_clicked();
+
+    void on_add_500_rubles_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     Vending vending;
