@@ -8,7 +8,7 @@ void BanknotesReceiver::addMoney(int amount){
     switch (amount) {
     case 50:
         userBanknotesAmount[0]++;
-
+        userSumm = userSumm = 50;
         break;
     case 100:
         userBanknotesAmount[1]++;
