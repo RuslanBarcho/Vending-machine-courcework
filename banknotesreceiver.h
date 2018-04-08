@@ -7,7 +7,7 @@ class BanknotesReceiver:Vending
 public:
     BanknotesReceiver();
     void addMoney(int amount);
-    int userBanknotesAmount[];
+    int userBanknotesAmount[4];
     int userCoinsAmount[4];
     int userSumm;
 };
