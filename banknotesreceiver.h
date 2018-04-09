@@ -6,10 +6,13 @@ class BanknotesReceiver:Vending
 {
 public:
     BanknotesReceiver();
-    void addMoney(int amount);
     int userBanknotesAmount[4];
     int userCoinsAmount[4];
-    int userSumm;
+    int userSumm;   
+    friend class MainWindow;
+private:
+    void addMoney(int amount);
+    int giveChange();
 };
 
 #endif // BANKNOTESRECEIVER_H

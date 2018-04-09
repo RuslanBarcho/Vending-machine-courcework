@@ -36,6 +36,8 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_give_change_clicked();
+
 private:
     Ui::MainWindow *ui;
     Vending vending;

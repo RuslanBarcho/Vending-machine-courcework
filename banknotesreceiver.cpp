@@ -3,27 +3,40 @@
 BanknotesReceiver::BanknotesReceiver()
 {
     userSumm = 0;
-    for(int i = 0; i< 4; i++){
-        userBanknotesAmount[i] = 0;
-    }
 }
+
+int BanknotesReceiver::giveChange(){
+    int change = 0;
+    int banknotesTypes[4] = {500, 200, 100, 50};
+    int userMoneyCopy = userSumm;
+    for (int i = 0; i<4; ++i){
+        while (banknotesAmount[i]>0 & userMoneyCopy >= banknotesTypes[i]){
+            change = change + banknotesTypes[i];
+            userMoneyCopy = userMoneyCopy - banknotesTypes[i];
+            banknotesAmount[i]--;
+        }
+    }
+    if (change != userSumm) change = -1;
+    return change;
+}
+
 void BanknotesReceiver::addMoney(int amount){
     switch (amount) {
     case 50:
         userSumm = userSumm + 50;
-        userBanknotesAmount[0]++;
+        banknotesAmount[3]++;
         break;
     case 100:
         userSumm = userSumm + 100;
-        userBanknotesAmount[1]++;
+        banknotesAmount[2]++;
         break;
     case 200:
         userSumm = userSumm + 200;
-        userBanknotesAmount[2]++;
+        banknotesAmount[1]++;
         break;
     case 500:
         userSumm = userSumm + 500;
-        userBanknotesAmount[3]++;
+        banknotesAmount[0]++;
         break;
     default:
         break;
