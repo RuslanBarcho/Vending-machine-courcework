@@ -25,7 +25,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
+      <pointsize>17</pointsize>
      </font>
     </property>
     <property name="text">
@@ -40,13 +40,13 @@
      <rect>
       <x>10</x>
       <y>40</y>
-      <width>211</width>
+      <width>191</width>
       <height>41</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
+      <pointsize>17</pointsize>
      </font>
     </property>
     <property name="text">
@@ -59,7 +59,7 @@
    <widget class="QLabel" name="label_user_money">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>200</x>
       <y>40</y>
       <width>281</width>
       <height>41</height>
@@ -67,7 +67,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
+      <pointsize>17</pointsize>
      </font>
     </property>
     <property name="text">
@@ -88,7 +88,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
+      <pointsize>17</pointsize>
      </font>
     </property>
     <property name="text">
@@ -181,7 +181,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
+      <pointsize>17</pointsize>
      </font>
     </property>
     <property name="text">
@@ -202,7 +202,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
+      <pointsize>17</pointsize>
      </font>
     </property>
     <property name="text">
@@ -223,7 +223,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
+      <pointsize>17</pointsize>
      </font>
     </property>
     <property name="text">
@@ -244,7 +244,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
+      <pointsize>17</pointsize>
      </font>
     </property>
     <property name="text">
@@ -283,7 +283,7 @@
     </property>
     <property name="font">
      <font>
-      <pointsize>18</pointsize>
+      <pointsize>17</pointsize>
      </font>
     </property>
     <property name="text">
