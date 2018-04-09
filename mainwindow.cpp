@@ -25,6 +25,13 @@ void MainWindow::coffeeConfirm(int coffeeID){
         ui->label_service->setText("Недостаточно средств");
     }
 }
+
+void MainWindow::on_give_change_clicked()
+{
+    ui->label_service->setText("Ваша сдача: " + QString::number(banknotesReceiver.giveChange()));
+    showUserMoney();
+}
+
 //coffee order buttons
 void MainWindow::on_pushButton_clicked()
 {
@@ -71,8 +78,26 @@ void MainWindow::on_add_500_rubles_clicked()
     showUserMoney();
 }
 
-void MainWindow::on_give_change_clicked()
+void MainWindow::on_add_1_ruble_clicked()
 {
-    ui->label_service->setText("Ваша сдача: " + QString::number(banknotesReceiver.giveChange()));
+    banknotesReceiver.addMoney(1);
+    showUserMoney();
+}
+
+void MainWindow::on_add_2_rubles_clicked()
+{
+    banknotesReceiver.addMoney(2);
+    showUserMoney();
+}
+
+void MainWindow::on_add_5_rubles_clicked()
+{
+    banknotesReceiver.addMoney(5);
+    showUserMoney();
+}
+
+void MainWindow::on_add_10_rubles_clicked()
+{
+    banknotesReceiver.addMoney(10);
     showUserMoney();
 }

@@ -38,6 +38,22 @@ void BanknotesReceiver::addMoney(int amount){
         userSumm = userSumm + 500;
         banknotesAmount[0]++;
         break;
+    case 1:
+        userSumm = userSumm + 1;
+        banknotesAmount[7]++;
+        break;
+    case 2:
+        userSumm = userSumm + 2;
+        banknotesAmount[6]++;
+        break;
+    case 5:
+        userSumm = userSumm + 5;
+        banknotesAmount[5]++;
+        break;
+    case 10:
+        userSumm = userSumm + 10;
+        banknotesAmount[4]++;
+        break;
     default:
         break;
     }

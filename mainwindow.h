@@ -38,6 +38,14 @@ private slots:
 
     void on_give_change_clicked();
 
+    void on_add_1_ruble_clicked();
+
+    void on_add_2_rubles_clicked();
+
+    void on_add_5_rubles_clicked();
+
+    void on_add_10_rubles_clicked();
+
 private:
     Ui::MainWindow *ui;
     Vending vending;
