@@ -73,5 +73,6 @@ void MainWindow::on_add_500_rubles_clicked()
 
 void MainWindow::on_give_change_clicked()
 {
-    ui->label_service->setText("Тест сдачи " + QString::number(banknotesReceiver.giveChange()));
+    ui->label_service->setText("Ваша сдача: " + QString::number(banknotesReceiver.giveChange()));
+    showUserMoney();
 }

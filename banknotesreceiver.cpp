@@ -16,7 +16,7 @@ int BanknotesReceiver::giveChange(){
             banknotesAmount[i]--;
         }
     }
-    if (change != userSumm) change = -1;
+    if (change != userSumm) change = -1; else userSumm = 0;
     return change;
 }
 
