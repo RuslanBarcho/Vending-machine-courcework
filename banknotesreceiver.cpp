@@ -7,12 +7,12 @@ BanknotesReceiver::BanknotesReceiver()
 
 int BanknotesReceiver::giveChange(){
     int change = 0;
-    int banknotesTypes[4] = {500, 200, 100, 50};
+    int banknotesTypes[8] = {500, 200, 100, 50, 10, 5, 2, 1};
     int userMoneyCopy = userSumm;
-    for (int i = 0; i<4; ++i){
+    for (int i = 0; i<8; ++i){
         while (banknotesAmount[i]>0 & userMoneyCopy >= banknotesTypes[i]){
-            change = change + banknotesTypes[i];
-            userMoneyCopy = userMoneyCopy - banknotesTypes[i];
+            change += banknotesTypes[i];
+            userMoneyCopy -= banknotesTypes[i];
             banknotesAmount[i]--;
         }
     }
