@@ -6,8 +6,6 @@ class BanknotesReceiver:Vending
 {
 public:
     BanknotesReceiver();
-    int userBanknotesAmount[4];
-    int userCoinsAmount[4];
     int userSumm;   
     friend class MainWindow;
 private:
