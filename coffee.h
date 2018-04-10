@@ -7,6 +7,8 @@ class Coffee
 public:
     int value;
     QString name;
+    enum States {NOT_READY, PROCESSING, READY};
+    States currentState;
 };
 
 #endif // COFFEE_H
