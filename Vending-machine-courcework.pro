@@ -28,14 +28,19 @@ SOURCES += \
         mainwindow.cpp \
     vending.cpp \
     banknotesreceiver.cpp \
-    coffeemachine.cpp
+    coffeemachine.cpp \
+    latte.cpp \
+    cappuccino.cpp \
+    coffee.cpp
 
 HEADERS += \
         mainwindow.h \
     vending.h \
     banknotesreceiver.h \
     coffeemachine.h \
-    coffee.h
+    coffee.h \
+    latte.h \
+    cappuccino.h
 
 FORMS += \
         mainwindow.ui

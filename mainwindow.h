@@ -15,7 +15,10 @@ class MainWindow : public QMainWindow
 
 public:
     explicit MainWindow(QWidget *parent = 0);
+    bool isInProgress = false;
     ~MainWindow();
+public slots:
+    void coffeeReady();
 
 private slots:
     void on_add_50_rubles_clicked();

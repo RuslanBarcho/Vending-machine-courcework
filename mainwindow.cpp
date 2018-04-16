@@ -6,6 +6,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    connect(coffeeMachine.latte, SIGNAL(coffeeReady()), this, SLOT(coffeeReady()));
+    connect(coffeeMachine.cappuccino, SIGNAL(coffeeReady()), this, SLOT(coffeeReady()));
 }
 
 MainWindow::~MainWindow()
@@ -18,11 +20,14 @@ void MainWindow::showUserMoney(){
 }
 //confirmation of coffee order by clicking button
 void MainWindow::coffeeConfirm(int coffeeID){
-    if (coffeeMachine.makeCoffee(coffeeID, banknotesReceiver) == 0){
-        ui->label_service->setText("Ваш " + coffeeMachine.coffeeList[coffeeID].name + " готов");
-        showUserMoney();
-    } else {
-        ui->label_service->setText("Недостаточно средств");
+    if (!isInProgress){
+        if (coffeeMachine.makeCoffee(coffeeID, banknotesReceiver) == 0){
+            ui->label_service->setText("Ваш " + coffeeMachine.coffeeList[coffeeID]->name + " готовится");
+            isInProgress = true;
+            showUserMoney();
+        } else {
+            ui->label_service->setText("Недостаточно средств");
+        }
     }
 }
 
@@ -30,6 +35,11 @@ void MainWindow::on_give_change_clicked()
 {
     ui->label_service->setText("Ваша сдача: " + QString::number(banknotesReceiver.giveChange()));
     showUserMoney();
+}
+
+void MainWindow::coffeeReady(){
+    ui->label_service->setText("Ваш заказ готов!");
+    isInProgress = false;
 }
 
 //coffee order buttons
