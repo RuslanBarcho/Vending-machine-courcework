@@ -31,7 +31,8 @@ SOURCES += \
     coffeemachine.cpp \
     latte.cpp \
     cappuccino.cpp \
-    coffee.cpp
+    coffee.cpp \
+    espresso.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -40,7 +41,8 @@ HEADERS += \
     coffeemachine.h \
     coffee.h \
     latte.h \
-    cappuccino.h
+    cappuccino.h \
+    espresso.h
 
 FORMS += \
         mainwindow.ui

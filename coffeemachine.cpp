@@ -5,6 +5,7 @@ CoffeeMachine::CoffeeMachine()
 {
     latte = new Latte();
     cappuccino = new Cappuccino();
+    espresso = new Espresso();
     for(int i = 0; i< 5; i++){
         Coffee* coffee = new Coffee();
         coffee->name = names[i];
@@ -23,6 +24,11 @@ int CoffeeMachine::makeCoffee(int coffeeID, BanknotesReceiver &banknotesReceiver
             break;
         case 1:{
             latte->make();
+            return 0;
+        }
+            break;
+        case 2:{
+            espresso->make();
             return 0;
         }
             break;

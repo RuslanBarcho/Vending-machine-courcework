@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     connect(coffeeMachine.latte, SIGNAL(coffeeReady()), this, SLOT(coffeeReady()));
     connect(coffeeMachine.cappuccino, SIGNAL(coffeeReady()), this, SLOT(coffeeReady()));
+    connect(coffeeMachine.espresso, SIGNAL(coffeeReady()), this, SLOT(coffeeReady()));
 }
 
 MainWindow::~MainWindow()

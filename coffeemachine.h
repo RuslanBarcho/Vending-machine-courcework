@@ -5,6 +5,7 @@
 #include "banknotesreceiver.h"
 #include "coffee.h"
 #include "latte.h"
+#include "espresso.h"
 #include "cappuccino.h"
 
 class CoffeeMachine:Vending
@@ -16,6 +17,7 @@ public:
     QList<Coffee*> coffeeList;
     Latte* latte;
     Cappuccino* cappuccino;
+    Espresso* espresso;
     int makeCoffee(int coffeeID, BanknotesReceiver &banknotesReceiver);
 };
 

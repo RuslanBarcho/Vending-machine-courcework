@@ -1,25 +1,19 @@
-#include <QDebug>
-#include <iostream>
-#include "latte.h"
+#include "espresso.h"
 
-Latte::Latte()
+Espresso::Espresso()
 {
-    name = "Латте";
+    name = "Эспрессо";
     timer = new QTimer();
     currentState = NOT_READY;
 }
-void Latte::make(){
+void Espresso::make(){
     QTimer::connect(timer, SIGNAL(timeout()), this, SLOT(updateState()));
     currentState = PROCESSING;
-    timer->start(3000);
+    timer->start(1000);
 }
-void Latte::updateState(){
-    std::cout << "updateLatteState" << std::endl;
+void Espresso::updateState(){
     currentState = READY;
     timer->stop();
     coffeeReady();
     currentState = NOT_READY;
-}
-Latte::~Latte(){
-
 }
