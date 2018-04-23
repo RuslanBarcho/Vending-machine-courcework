@@ -2,18 +2,20 @@
 
 Espresso::Espresso()
 {
-    name = "Эспрессо";
+    name = "эспрессо";
     timer = new QTimer();
+    QTimer::connect(timer, SIGNAL(timeout()), this, SLOT(updateState()));
+    timer->setSingleShot(true);
     currentState = NOT_READY;
 }
 void Espresso::make(){
-    QTimer::connect(timer, SIGNAL(timeout()), this, SLOT(updateState()));
     currentState = PROCESSING;
+    coffeeState(name, currentState);
     timer->start(1000);
 }
 void Espresso::updateState(){
     currentState = READY;
     timer->stop();
-    coffeeReady();
+    coffeeState(name, currentState);
     currentState = NOT_READY;
 }

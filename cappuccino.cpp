@@ -1,19 +1,23 @@
 #include "cappuccino.h"
+#include <iostream>
 
 Cappuccino::Cappuccino()
 {
-    name = "Капучино";
+    name = "капучино";
     timer = new QTimer();
+    QTimer::connect(timer, SIGNAL(timeout()), this, SLOT(updateState()));
+    timer->setSingleShot(true);
     currentState = NOT_READY;
 }
 void Cappuccino::make(){
-    QTimer::connect(timer, SIGNAL(timeout()), this, SLOT(updateState()));
     currentState = PROCESSING;
+    coffeeState(name, currentState);
     timer->start(5000);
 }
 void Cappuccino::updateState(){
     currentState = READY;
+    coffeeState(name, currentState);
+    std::cout << "updateCappuccinoState" << std::endl;
     timer->stop();
-    coffeeReady();
     currentState = NOT_READY;
 }

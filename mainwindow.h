@@ -18,7 +18,7 @@ public:
     bool isInProgress = false;
     ~MainWindow();
 public slots:
-    void coffeeReady();
+    void coffeeReady(QString name, Coffee::States state);
 
 private slots:
     void on_add_50_rubles_clicked();

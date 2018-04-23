@@ -1,16 +1,19 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include <iostream>
 
+//Window constructor
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(coffeeMachine.latte, SIGNAL(coffeeReady()), this, SLOT(coffeeReady()));
-    connect(coffeeMachine.cappuccino, SIGNAL(coffeeReady()), this, SLOT(coffeeReady()));
-    connect(coffeeMachine.espresso, SIGNAL(coffeeReady()), this, SLOT(coffeeReady()));
+    //implemention interfaces of different Coffee objects types
+    connect(coffeeMachine.latte, &Coffee::coffeeState, this, &MainWindow::coffeeReady);
+    connect(coffeeMachine.cappuccino, &Coffee::coffeeState, this, &MainWindow::coffeeReady);
+    connect(coffeeMachine.espresso, &Coffee::coffeeState, this, &MainWindow::coffeeReady);
 }
-
+//Window destructor
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -23,26 +26,34 @@ void MainWindow::showUserMoney(){
 void MainWindow::coffeeConfirm(int coffeeID){
     if (!isInProgress){
         if (coffeeMachine.makeCoffee(coffeeID, banknotesReceiver) == 0){
-            ui->label_service->setText("Ваш " + coffeeMachine.coffeeList[coffeeID]->name + " готовится");
-            isInProgress = true;
             showUserMoney();
         } else {
             ui->label_service->setText("Недостаточно средств");
         }
     }
 }
-
+//void to give change if it's posible
 void MainWindow::on_give_change_clicked()
 {
     ui->label_service->setText("Ваша сдача: " + QString::number(banknotesReceiver.giveChange()));
     showUserMoney();
 }
-
-void MainWindow::coffeeReady(){
-    ui->label_service->setText("Ваш заказ готов!");
-    isInProgress = false;
+//implemented interface from Coffee cobject to do something when Coffee object status updates
+void MainWindow::coffeeReady(QString name, Coffee::States state){
+    switch (state) {
+    case Coffee::READY:
+        ui->label_service->setText("Ваш " + name + " готов!");
+        isInProgress = false;
+        break;
+    case Coffee::PROCESSING:
+        ui->label_service->setText("Ваш " + name + " готовится");
+        std::cout << "CoffeeProcessing" << std::endl;
+        isInProgress = true;
+        break;
+    default:
+        break;
+    }
 }
-
 //coffee order buttons
 void MainWindow::on_pushButton_clicked()
 {

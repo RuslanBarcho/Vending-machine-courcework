@@ -18,7 +18,7 @@ public:
 public slots:
     virtual void updateState();
 signals:
-    void coffeeReady();
+    void coffeeState(QString name, States state);
 };
 
 #endif // COFFEE_H
