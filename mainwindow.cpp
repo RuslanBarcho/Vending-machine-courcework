@@ -8,6 +8,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    timer = new QTimer();
+    timer->setSingleShot(true);
+    QTimer::connect(timer, SIGNAL(timeout()), this, SLOT(resetScreen()));
     //implemention interfaces of different Coffee objects types
     connect(coffeeMachine.latte, &Coffee::coffeeState, this, &MainWindow::coffeeReady);
     connect(coffeeMachine.cappuccino, &Coffee::coffeeState, this, &MainWindow::coffeeReady);
@@ -32,11 +35,17 @@ void MainWindow::coffeeConfirm(int coffeeID){
         }
     }
 }
+void MainWindow::resetScreen(){
+    if (!isInProgress){
+    ui->label_service->setText("Добро пожаловать!");
+    }
+}
 //void to give change if it's posible
 void MainWindow::on_give_change_clicked()
 {
     ui->label_service->setText("Ваша сдача: " + QString::number(banknotesReceiver.giveChange()));
     showUserMoney();
+
 }
 //implemented interface from Coffee cobject to do something when Coffee object status updates
 void MainWindow::coffeeReady(QString name, Coffee::States state){
@@ -44,6 +53,7 @@ void MainWindow::coffeeReady(QString name, Coffee::States state){
     case Coffee::READY:
         ui->label_service->setText("Ваш " + name + " готов!");
         isInProgress = false;
+        timer->start(4000);
         break;
     case Coffee::PROCESSING:
         ui->label_service->setText("Ваш " + name + " готовится");

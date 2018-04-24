@@ -4,6 +4,7 @@
 Latte::Latte()
 {
     name = "латте";
+    value = 50;
     timer = new QTimer();
     QTimer::connect(timer, SIGNAL(timeout()), this, SLOT(updateState()));
     timer->setSingleShot(true);

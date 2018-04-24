@@ -4,6 +4,8 @@
 #include <QMainWindow>
 #include "vending.h"
 #include "coffeemachine.h"
+#include <QTimer>
+#include <QTime>
 
 namespace Ui {
 class MainWindow;
@@ -16,10 +18,11 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     bool isInProgress = false;
+    QTimer *timer;
     ~MainWindow();
 public slots:
     void coffeeReady(QString name, Coffee::States state);
-
+    void resetScreen();
 private slots:
     void on_add_50_rubles_clicked();
 
@@ -48,6 +51,8 @@ private slots:
     void on_add_5_rubles_clicked();
 
     void on_add_10_rubles_clicked();
+
+
 
 private:
     Ui::MainWindow *ui;

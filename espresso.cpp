@@ -3,6 +3,7 @@
 Espresso::Espresso()
 {
     name = "эспрессо";
+    value = 60;
     timer = new QTimer();
     QTimer::connect(timer, SIGNAL(timeout()), this, SLOT(updateState()));
     timer->setSingleShot(true);
