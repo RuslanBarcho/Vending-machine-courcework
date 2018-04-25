@@ -7,6 +7,7 @@
 #include "latte.h"
 #include "espresso.h"
 #include "cappuccino.h"
+#include "icedcoffee.h"
 
 class CoffeeMachine:Vending
 {
@@ -18,6 +19,7 @@ public:
     Latte* latte;
     Cappuccino* cappuccino;
     Espresso* espresso;
+    IcedCoffee* icedCoffee;
     int makeCoffee(int coffeeID, BanknotesReceiver &banknotesReceiver);
 };
 

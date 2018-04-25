@@ -2,7 +2,6 @@
 #define ESPRESSO_H
 #include "coffee.h"
 
-
 class Espresso: public Coffee
 {
 public:

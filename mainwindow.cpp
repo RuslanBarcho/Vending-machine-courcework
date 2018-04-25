@@ -12,9 +12,9 @@ MainWindow::MainWindow(QWidget *parent) :
     timer->setSingleShot(true);
     QTimer::connect(timer, SIGNAL(timeout()), this, SLOT(resetScreen()));
     //implemention interfaces of different Coffee objects types
-    connect(coffeeMachine.latte, &Coffee::coffeeState, this, &MainWindow::coffeeReady);
-    connect(coffeeMachine.cappuccino, &Coffee::coffeeState, this, &MainWindow::coffeeReady);
-    connect(coffeeMachine.espresso, &Coffee::coffeeState, this, &MainWindow::coffeeReady);
+    for (int i = 0; i< coffeeMachine.coffeeList.size(); i++){
+        connect(coffeeMachine.coffeeList[i], &Coffee::coffeeState, this, &MainWindow::coffeeReady);
+    }
 }
 //Window destructor
 MainWindow::~MainWindow()
@@ -32,6 +32,7 @@ void MainWindow::coffeeConfirm(int coffeeID){
             showUserMoney();
         } else {
             ui->label_service->setText("Недостаточно средств");
+            timer->start(4000);
         }
     }
 }
@@ -45,7 +46,7 @@ void MainWindow::on_give_change_clicked()
 {
     ui->label_service->setText("Ваша сдача: " + QString::number(banknotesReceiver.giveChange()));
     showUserMoney();
-
+    timer->start(4000);
 }
 //implemented interface from Coffee cobject to do something when Coffee object status updates
 void MainWindow::coffeeReady(QString name, Coffee::States state){
