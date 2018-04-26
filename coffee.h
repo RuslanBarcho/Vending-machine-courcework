@@ -11,6 +11,7 @@ public:
     Coffee();
     ~Coffee();
     int value;
+    virtual void make();
     QString name;
     enum States {NOT_READY, PROCESSING, READY};
     States currentState;

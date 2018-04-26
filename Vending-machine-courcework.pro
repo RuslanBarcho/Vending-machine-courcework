@@ -33,7 +33,8 @@ SOURCES += \
     cappuccino.cpp \
     coffee.cpp \
     espresso.cpp \
-    icedcoffee.cpp
+    icedcoffee.cpp \
+    hotcocoa.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -44,7 +45,8 @@ HEADERS += \
     latte.h \
     cappuccino.h \
     espresso.h \
-    icedcoffee.h
+    icedcoffee.h \
+    hotcocoa.h
 
 FORMS += \
         mainwindow.ui

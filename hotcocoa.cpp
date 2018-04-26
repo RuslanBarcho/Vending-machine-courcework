@@ -1,26 +1,22 @@
-#include <iostream>
-#include "latte.h"
+#include "hotcocoa.h"
 
-Latte::Latte()
+HotCocoa::HotCocoa()
 {
-    name = "латте";
-    value = 50;
+    name = "горяий шоколад";
+    value = 45;
     timer = new QTimer();
     QTimer::connect(timer, SIGNAL(timeout()), this, SLOT(updateState()));
     timer->setSingleShot(true);
     currentState = NOT_READY;
 }
-void Latte::make(){
+void HotCocoa::make(){
     currentState = PROCESSING;
     coffeeState(name, currentState);
-    timer->start(3000);
+    timer->start(6000);
 }
-void Latte::updateState(){
+void HotCocoa::updateState(){
     currentState = READY;
-    std::cout << "LatteReady" << std::endl;
+    timer->stop();
     coffeeState(name, currentState);
     currentState = NOT_READY;
-}
-Latte::~Latte(){
-
 }
