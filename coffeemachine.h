@@ -14,8 +14,8 @@ class CoffeeMachine:Vending
 {
 public:
     CoffeeMachine();
-    int values[5] = {60, 50, 60, 70, 45};
-    QString names[5] = {"Капучино", "Латте", "Эспрессо", "Гляссе", "Горячий шоколад"};
+    //int values[5] = {60, 50, 60, 70, 45};
+    //QString names[5] = {"Капучино", "Латте", "Эспрессо", "Гляссе", "Горячий шоколад"};
     QList<Coffee*> coffeeList;
     Latte* latte;
     Cappuccino* cappuccino;

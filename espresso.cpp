@@ -12,7 +12,7 @@ Espresso::Espresso()
 void Espresso::make(){
     currentState = PROCESSING;
     coffeeState(name, currentState);
-    timer->start(1000);
+    timer->start(3000);
 }
 void Espresso::updateState(){
     currentState = READY;

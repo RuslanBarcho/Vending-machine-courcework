@@ -11,7 +11,7 @@ public:
 private:
     QMutex mutex;
 protected:
-    int banknotesAmount[8] = {5, 5, 5, 5, 5, 5, 5, 5};
+    int banknotesAmount[8] = {5, 5, 5, 5, 5, 0, 0, 0};
 };
 
 #endif // VENDING_H

@@ -44,8 +44,13 @@ void MainWindow::resetScreen(){
 //void to give change if it's posible
 void MainWindow::on_give_change_clicked()
 {
-    ui->label_service->setText("Ваша сдача: " + QString::number(banknotesReceiver.giveChange()));
-    showUserMoney();
+    int temp = banknotesReceiver.giveChange();
+    if (temp == -1){
+        ui->label_service->setText("Невозможно выдать сдачу, обратитесь в тех. поддержку");
+    } else {
+        ui->label_service->setText("Ваша сдача: " + QString::number(temp));
+        showUserMoney();
+    }
     timer->start(4000);
 }
 //implemented interface from Coffee cobject to do something when Coffee object status updates
